@@ -63,6 +63,7 @@ namespace GestorDeRecetas
 
                 while (ejecutando)
                 {
+                    Console.Clear();
                     Console.WriteLine("Gestor de Recetas");
                     Console.WriteLine("1. Agregar Receta");
                     Console.WriteLine("2. Buscar Receta por Nombre");
@@ -80,9 +81,11 @@ namespace GestorDeRecetas
                                 break;
                             case 2:
                                 BuscarRecetaPorNombre(gestor);
+                                Console.ReadKey();
                                 break;
                             case 3:
                                 gestor.ListarTodasLasRecetas();
+                                Console.ReadKey();
                                 break;
                             case 4:
                                 ejecutando = false;
@@ -90,6 +93,7 @@ namespace GestorDeRecetas
                                 break;
                             default:
                                 Console.WriteLine("Opción no válida. Por favor, intente nuevamente.");
+                                Console.ReadKey();
                                 break;
                         }
                     }
