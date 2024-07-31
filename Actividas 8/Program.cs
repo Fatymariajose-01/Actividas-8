@@ -25,7 +25,7 @@ namespace GestorDeRecetas
 
     public class GestorDeRecetas
     {
-        private List<Receta> recetas = new List<Receta>();
+        public List<Receta> recetas = new List<Receta>();
 
         public void AgregarReceta(Receta receta)
         {
@@ -38,5 +38,22 @@ namespace GestorDeRecetas
             return recetas.FirstOrDefault(r => r.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
         }
 
- 
+        public void ListarTodasLasRecetas()
+        {
+            if (recetas.Count > 0)
+            {
+                Console.WriteLine("Todas las Recetas:");
+                foreach (var receta in recetas)
+                {
+                    Console.WriteLine(receta);
+                    Console.WriteLine(); 
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay recetas registradas.");
+            }
+        }
+    }
+
 }
