@@ -23,5 +23,20 @@ namespace GestorDeRecetas
         }
     }
 
-  
+    public class GestorDeRecetas
+    {
+        private List<Receta> recetas = new List<Receta>();
+
+        public void AgregarReceta(Receta receta)
+        {
+            recetas.Add(receta);
+            Console.WriteLine("Receta agregada con éxito.");
+        }
+
+        public Receta BuscarRecetaPorNombre(string nombre)
+        {
+            return recetas.FirstOrDefault(r => r.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+        }
+
+ 
 }
